@@ -1,3 +1,4 @@
+// 1로만들기
 #include <iostream>
 #include <algorithm>
 
