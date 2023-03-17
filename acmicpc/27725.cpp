@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -11,10 +9,10 @@ int main()
     cout.tie(NULL);
 
     int n;
+
     cin >> n;
 
     vector<int> p;
-
     for (int i = 0; i < n; i++)
     {
         int p_;
@@ -22,24 +20,10 @@ int main()
         p.push_back(p_);
     }
 
-    long long k;
+    int k;
     cin >> k;
 
-    long long res = 0;
-
-    for (long long i = 1; i <= k; i++)
-    {
-        int x = 2;
-        int y = 2;
-
-        int divisor = i;
-
-        while (divisor > 1)
-        {
-        }
-    }
-
-    cout << res;
+    
 
     return 0;
 }
