@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -13,10 +11,10 @@ int main()
     int n, q;
     cin >> n >> q;
 
-    long long sumToken[n];
+    unsigned long long sumToken[n];
     for (int i = 0; i < n; i++)
     {
-        int cur;
+        unsigned long long cur;
         cin >> cur;
         if (i == 0)
         {
@@ -47,7 +45,7 @@ int main()
             int s, e;
             cin >> s >> e;
 
-            long long sum = 0;
+            unsigned long long sum = 0;
 
             int startDay = s - 1;
 

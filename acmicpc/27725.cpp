@@ -2,6 +2,8 @@
 
 using namespace std;
 
+int p[200001];
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -12,18 +14,28 @@ int main()
 
     cin >> n;
 
-    vector<int> p;
     for (int i = 0; i < n; i++)
     {
-        int p_;
-        cin >> p_;
-        p.push_back(p_);
+        cin >> p[i];
     }
 
-    int k;
+    long long k;
     cin >> k;
 
-    
+    long long res = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        long long cur = p[i];
+
+        while (k / cur > 0)
+        {
+            res += k / cur;
+            cur *= p[i];
+        }
+    }
+
+    cout << res;
 
     return 0;
 }
