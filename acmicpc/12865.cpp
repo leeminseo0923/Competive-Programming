@@ -1,32 +1,38 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int N, K, W[101010], V[101010];
-double VperW[101010];
+int dp[101][1010101];
 
-int main(){
-    cin >> N >> K;
+int weight[101];
+int value[101];
 
-    for(int i = 0; i < N; i++){
-        cin >> W[i] >> V[i];
-        VperW[i] = (double)V[i]/W[i];
+int main()
+{
+    int n, k;
+    cin >> n >> k;
+
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> weight[i] >> value[i];
     }
-    int curWeight = 0;
-    int sumValue = 0;
-    for(int i = 0; i < N; i++){
-        double maxVperW = VperW[0];
-        int maxId = 0;
-        for(int j = 1; i < N; i++){
-            if(maxVperW < VperW[i] || (maxVperW == VperW[i] && W[i] < W[maxId])){
-                maxVperW = VperW[i];
-                maxId = i;
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= k; j++)
+        {
+            if (j - weight[i] >= 0)
+            {
+                dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
+            }
+            else
+            {
+                dp[i][j] = dp[i - 1][j];
             }
         }
-        if(!(curWeight + W[maxId] > K)){
-            curWeight += W[maxId];
-            sumValue += V[maxId];
-        }
     }
-    cout << sumValue << endl;
+
+    cout << dp[n][k];
+
+    return 0;
 }
