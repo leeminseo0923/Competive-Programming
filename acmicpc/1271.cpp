@@ -1,10 +1,11 @@
-#include <bits/stdc++.h>
+#include <iostream>
+
 using namespace std;
+
 int main()
 {
-    int a[3];
-    cin >> a[0] >> a[1] >> a[2];
-    sort(a, a + 3);
-    cout << a[0] << ' ' << a[1] << ' ' << a[2];
-    return 0;
+    int n, m;
+    cin >> n >> m;
+    cout << n / m << '\n'
+         << n % m;
 }
